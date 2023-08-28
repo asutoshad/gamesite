@@ -1,0 +1,28 @@
+#mw-top{ padding: 0; margin: 0; position: relative; z-index: 3;}
+#mw-top .mwt-content{ padding: 80px 0 30px; position: relative; max-width: 600px; margin: 0 auto;}
+#mw-top .mwh-logo{ margin-bottom: 40px; text-align: center}
+#mw-top .mwh-logo .mwh-logo-div{ display: inline-block}
+#mw-top .mwh-logo .mwh-logo-div img{height: 60px; width: auto;}
+#mw-top .mw-heading-second{font-size: 20px; font-weight: 600; position: relative; padding-left: 30px; margin: 0 0 15px;}
+#xsearch.home-search{}
+#xsearch.home-search .search-input{height: 60px; background: #1c1c1c !important; font-weight: 400; border-radius: 10px 0 0 10px; padding-left: 30px; padding-right: 30px; font-size: 18px; border: none !important;}
+#xsearch.home-search .search-input::placeholder{color: #999;}
+#xsearch.home-search .search-content .search-submit{height: 60px; text-align: center; position: absolute; top: 0; right: 0; bottom: 0; cursor: pointer; display: inline-block; width: 90px; background: #5a2e98; border-radius: 0 10px 10px 0;}
+#xsearch.home-search .search-content .search-submit .search-icon{ width: 90px; height: 60px; padding: 0; margin: 0}
+#xsearch.home-search .search-content .search-submit .search-icon i{color: #111; font-size: 20px; line-height: 60px; color: #fff;}
+#xsearch.home-search .search-content{position: relative; padding-right: 90px; margin-bottom: 20px;}
+.show-share{display: block; text-align: center; margin-bottom: 3px;}
+#mw-text{ margin: 40px auto; max-width: 1000px; font-size: 15px; line-height: 1.5em; color: #aaa}
+#mw-text .mt-h-large{font-size: 2em; margin-bottom: 20px; color: #ddd}
+#mw-text .mt-h-medium{font-size: 1.5em; margin-bottom: 10px; color: #ddd}
+#mw-text .mt-h-small{font-size: 1.1em; margin-bottom: 10px; color: #ddd}
+#mw-text ul{padding-left: 15px}
+#mw-text li{margin-bottom: 10px}
+#mw-text li strong{color: #ddd;}
+#mw-text a{color: #a885da}
+.btn-home{ border-radius: 10px; color: #fff !important;}
+@media screen and (max-width: 479px){
+    #mw-text{margin: 25px auto}
+    .btn-lg.btn-focus{display: block; width: 100%}
+    #mw-text{font-size: 13px}
+}
