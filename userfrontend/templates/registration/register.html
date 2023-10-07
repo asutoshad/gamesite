@@ -1,0 +1,14 @@
+{% load static %}
+{% include 'include/base.html' %}
+
+<form method="post">
+{% csrf_token %}
+{{form.as_p}}
+<button>save</button>
+</form>
+
+{% if form.errors %}
+<div class="alert alert-danger">
+    {{ form.errors }}
+</div>
+{% endif %}

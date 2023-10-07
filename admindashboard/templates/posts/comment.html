@@ -1,0 +1,18 @@
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Add Comment</button>
+</form>
+
+
+{% for comment in blog.comments.all %}
+    <div class="comment">
+        <p>{{ comment.user.username }} said:</p>
+        <p>{{ comment.text }}</p>
+        <p>Posted on: {{ comment.created_at }}</p>
+    </div>
+{% empty %}
+    <p>No comments yet.</p>
+{% endfor %}
+
+<a href="{% url 'add_comment' blog.id %}">Add a Comment</a>
