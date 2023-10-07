@@ -11,7 +11,9 @@ urlpatterns = [
     path('', views.frontend, name='frontend'),
     path('homepage', views.fhome, name='fhome'),
     path('profile', views.profile, name='profile'),
+
     path('page/<str:pk_test>/', views.page, name='page'),
+    
     path('register', views.registration, name='registration'),
     path('login', LoginView.as_view(), name='login'),
     path('logout', LogoutView.as_view(next_page='fhome'), name='logout'),

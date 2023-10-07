@@ -1,7 +1,7 @@
 # forms.py
 from django import forms
 from .models import Gamedb
-from .models import BlogPost
+from .models import BlogPost, Comment
 
 
     
@@ -20,3 +20,11 @@ class BlogForm(forms.ModelForm):
 
 
 
+class CommentForm(forms.ModelForm):
+    class Meta:
+        model = Comment
+        fields = ['message']
+        # Define fields and widgets as needed
+
+    user = forms.CharField(widget=forms.HiddenInput())
+    gamedb = forms.CharField(widget=forms.HiddenInput())
