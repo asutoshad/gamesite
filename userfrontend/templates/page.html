@@ -143,29 +143,50 @@
                     </section>
                     <!--/End: Section detail-->
                     <!--Begin: Section comment-->
+                   
                     <section class="block_area block_area-comment">
                         <div class="block_area-header block_area-header-tabs">
                             <div class="float-left bah-heading mr-4">
-                                <h2 class="cat-heading">Comment</h2>
+                                <!-- <h2 class="cat-heading">Comment</h2> -->
                             </div>
                             <div class="float-right bah-tabs">
-                                <a href="javascript:;" data-type="episode"
-                                    class="btn btn-sm btn-comment-tab active">Episode
+                                <a href="javascript:;" data-type="episode" class="btn btn-sm btn-comment-tab active">Episode
                                     <span id="cm-episode-number"></span></a>
                                 <a href="javascript:;" data-type="anime" class="btn btn-sm btn-comment-tab">Anime</a>
                             </div>
                             <div class="clearfix"></div>
                         </div>
                         <div class="block_area-content">
-                            <div id="disqus_thread"></div>
-                            <div class="block mb-2 text-center">
-                                <a href="javascript:;"
-                                    class="btn btn-sm btn-long btn-focus more-padding btn-load-comment">Click
-                                    to load comments</a>
+                    
+                            <!-- Display the comments and usernames -->
+                            <h2>Comments:</h2>
+                            <ul class="comment-list">
+                                {% for comment in comments %}
+                                <li class="comment">
+                                    <div class="comment-user">
+                                        <strong>{{ comment.user.username }}</strong> says:
+                                    </div>
+                                    <div class="comment-message">
+                                        {{ comment.message }}
+                                    </div>
+                                </li>
+                                {% empty %}
+                                <li>No comments yet.</li>
+                                {% endfor %}
+                            </ul>
+                    
+
+                            <h2>Post Your Comment</h2>
+                            <div class="comment-form">
+                                <form method="post">
+                                    {% csrf_token %}
+                                    {{ comment_form.as_p }}
+                                    <button type="submit" class="btn btn-primary">Create Comment</button>
+                                </form>
                             </div>
-                     
                         </div>
                     </section>
+
                     <!--/End: Section comment-->
                     <!--Begin: Section film list-->
                     <section class="block_area block_area-anime block_area_box">

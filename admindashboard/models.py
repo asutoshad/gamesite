@@ -1,6 +1,6 @@
 from django.db import models
 from django.utils import timezone
-
+from userfrontend.models import userregisterdb
 
 from ckeditor.fields import RichTextField
 from taggit.managers import TaggableManager
@@ -57,4 +57,14 @@ class BlogPost(models.Model):
         return self.title
     
 
+from django.contrib.auth.models import User
 
+
+class Comment(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)  # ForeignKey to the User model
+    gamedb = models.ForeignKey(Gamedb, on_delete=models.CASCADE)  # ForeignKey to the Gamedb model
+    message = models.TextField(max_length=500)
+    created_at = models.DateTimeField(default=timezone.now)
+
+    def __str__(self):
+        return self.message

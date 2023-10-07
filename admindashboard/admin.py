@@ -3,7 +3,7 @@ from django.contrib import admin
 # Register your models here.
 
 from .models import Gamedb
-from .models import BlogPost
+from .models import BlogPost, Comment
 
 
 
@@ -12,4 +12,5 @@ from .models import BlogPost
 admin.site.register(Gamedb)
 admin.site.register(BlogPost)
 
+admin.site.register(Comment)
 
